@@ -1,0 +1,14 @@
+{
+  "name": "secondgame",
+  "version": "1.0.0",
+  "description": "2D Game",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "M.Mihova",
+  "license": "ISC",
+  "dependencies": {
+    "typescript": "^5.0.4"
+  }
+}

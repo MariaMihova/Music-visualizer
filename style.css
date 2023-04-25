@@ -1,0 +1,44 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* to make sure it look the same in all browsers */
+}
+/* #container,
+#app {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+} */
+
+#container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: black;
+}
+#app {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* filter: blur(2px) contrast(4); */
+}
+
+#audio {
+  width: 50%;
+  margin: 50px auto;
+  display: block;
+}
+
+#audioFile {
+  position: absolute;
+  top: 150px;
+  color: white;
+  z-index: 100;
+}

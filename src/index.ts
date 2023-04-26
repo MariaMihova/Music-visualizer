@@ -4,7 +4,6 @@ const audio: HTMLMediaElement = document.querySelector("audio")!;
 const audioFile = document.querySelector("#audioFile")!;
 audioFile.addEventListener("change", setAudio);
 // audio.src = "./sounds/explosion5.wav";
-const audioCtx = new AudioContext();
 
 const container = document.querySelector("#container")!;
 const canvas = document.querySelector("canvas")!;
@@ -16,9 +15,11 @@ let audioSource: MediaElementAudioSourceNode;
 let analyser: AnalyserNode;
 
 // container.addEventListener("click", () => play(audio));
-audioSource = audioCtx.createMediaElementSource(audio);
+
 function play() {
   console.log("play funck");
+  const audioCtx = new AudioContext();
+  audioSource = audioCtx.createMediaElementSource(audio);
   audio.play();
   analyser = audioCtx.createAnalyser();
   audioSource.connect(analyser);
@@ -76,6 +77,10 @@ function setAudio() {
   console.log("set audio file");
   const files = this.files;
   const audio: HTMLMediaElement = document.querySelector("audio")!;
+  if (!audio.paused) {
+    audio.pause();
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+  }
   audio.src = URL.createObjectURL(files[0]); //takes whatever we pass to it and convert it into a string 64 bit uints
   audio.load(); //updates the audio element after changing the src ot other settings
   play();
